@@ -1,4 +1,8 @@
-USE burgers_db;
+-- use for local deployment
+-- USE burgers_db;
+
+-- use for heroku deployment
+use ici55aem3zzw9fxd;
 
 INSERT INTO burgers (burger_name, devoured) VALUES
 ("White Castle Slider", false),
