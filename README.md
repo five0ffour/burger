@@ -9,4 +9,4 @@ express
 express-handlebars
 mysql
 dotenv
-heroku 
+heroku deployment w/remote database

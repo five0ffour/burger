@@ -39,6 +39,7 @@ const orm = {
         var queryStr = "DELETE FROM  " + table +
         " WHERE " + printQuestionMarksConditional(condition.length);
         console.log(queryStr);
+        console.log(condition);
         connection.query(queryStr, condition, function(err,result) {
             if (err) throw err; 
             cb(result.affectedRows);

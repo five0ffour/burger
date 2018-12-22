@@ -1,4 +1,4 @@
-// Set up MySQL connection.
+// Set up MySQL connection:  support localhost or Herolu jawsDB
 var dotenv = require("dotenv").config();
 var mysql = require("mysql");
 var connection;

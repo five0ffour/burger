@@ -1,12 +1,5 @@
 var orm = require("../config/orm.js");
 
-// var cat = {
-//     all: function (cb) {
-//       orm.all({ table : "cats" }, function (res) {
-//         cb(res);
-//       });
-//     },
-
 var burger = {
 
     all : (cb) => {
@@ -37,13 +30,12 @@ var burger = {
         });
     },
 
-
-    // var condition = [{ "burger_name" : "Robin's Nest"}];
-    delete: (burgerId, cb) => {
+    // var condition = "id = 13"
+    delete: (burgerObj, cb) => {
         var condition = [{
-            id: burgerId
+            id: burgerObj.id
         }];
-        orm.delete("burger", condition, (res) => {
+        orm.delete("burgers", condition, (res) => {
             cb(res);
         });
     }

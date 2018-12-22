@@ -32,5 +32,19 @@ router.put("/api/burgers/:id", function (req, res) {
     });
 });
 
+router.delete("/api/burgers/:id", function (req, res) {
+    console.log("DELETE Called: ", req.params.id);
+    var burgerObj = { "id" : req.params.id };
+    burger.delete(burgerObj, (data) => {
+        var burgersData = {
+            burgers: data
+        };
+        console.log("--------- DELETE ----------");
+        console.log(burgersData);
+        res.render("index", burgersData);
+    });
+});
+
+
 // Export routes for server.js to use.
 module.exports = router;

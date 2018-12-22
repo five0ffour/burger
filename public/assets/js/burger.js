@@ -20,4 +20,25 @@ $(function () {
         );
     });
 
+    $(".delete-btn").on("click", function (event) {
+        var burger = {
+            id : $(this).data("id")
+        }
+
+        console.log("Delete event for id: ", burger.id);
+
+        // Send the POST request.
+        $.ajax("/api/burgers/" + burger.id, {
+            type: "DELETE",
+            data: burger
+        }).then(
+            function () {
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+
+
+
 });
