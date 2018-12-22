@@ -7,7 +7,7 @@ var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
-    console.log("Get Called");
+    console.log("GETS Called");
     burger.all((data) => {
         var burgersData = {
             burgers: data
@@ -15,7 +15,20 @@ router.get("/", function (req, res) {
         console.log("--------- GET ----------");
         console.log(burgersData);
         res.render("index", burgersData);
-        // res.json(burgersData);
+    });
+});
+
+router.put("/api/burgers/:id", function (req, res) {
+    console.log("PUT Called: ", req.params.id);
+    var burgerObj = { "id" : req.params.id,
+                      "devoured" : true };
+    burger.update(burgerObj, (data) => {
+        var burgersData = {
+            burgers: data
+        };
+        console.log("--------- PUT ----------");
+        console.log(burgersData);
+        res.render("index", burgersData);
     });
 });
 

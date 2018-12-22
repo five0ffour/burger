@@ -4,7 +4,7 @@
 
 <table>
     <tr>
-        <th>Burger</th>
+        <th>Burger Type</th>
         <th></th>
         <th></th>
     </tr>
@@ -12,8 +12,8 @@
         {{#unless this.devoured}}
     <tr>
         <td>{{this.burger_name}}</td>
-        <td><button class="eat-btn" data-id=this.id>Eat</button></td>
-        <td><button class="delete-btn" data-id=this.id>Delete</button></td>
+        <td><button class="eat-btn" data-id={{this.id}}>Eat</button></td>
+        <td><button class="delete-btn" data-id={{this.id}}>Delete</button></td>
     </tr>
         {{/unless}}
         {{/each}}
@@ -24,16 +24,14 @@
 
 <table>
     <tr>
-        <th>Burger</th>
-        <th></th>
+        <th>Burger Type</th>
         <th></th>
     </tr>
         {{#each burgers}}
         {{#if this.devoured}}
     <tr>
         <td>{{this.burger_name}}</td>
-        <td><button class="eat-btn" data-id=this.id>Eat</button></td>
-        <td><button class="delete-btn" data-id=this.id>Delete</button></td>
+        <td><button class="delete-btn" data-id={{this.id}}>Delete</button></td>
     </tr>
         {{/if}}
         {{/each}}

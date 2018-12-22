@@ -27,9 +27,9 @@ const orm = {
     update : function (table, colValuePairs, condition, cb) {
         var queryStr = "UPDATE " + table +
         " SET " + objToSql(colValuePairs) +
-        " WHERE " + condition;
+        " WHERE " + printQuestionMarksConditional(condition.length);
         console.log(queryStr);
-        connection.query(queryStr, function(err,result) {
+        connection.query(queryStr, condition, function(err,result) {
             if (err) throw err; 
             cb(result.affectedRows);
         });

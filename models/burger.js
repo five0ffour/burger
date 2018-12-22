@@ -27,11 +27,12 @@ var burger = {
     // var objKeyPair = { "burger_name" : "Bacon Cheese Burger",
     //                   "devoured" : false };
     // var condition = "id = 13";
-    update: (burgerObj) => {
+    update: (burgerObj, cb) => {
+        var values = { "devoured" : burgerObj.devoured };
         var condition = [{
             id: burgerObj.id
         }];
-        orm.update("burgers", burgerObj, condition, (res) => {
+        orm.update("burgers", values, condition, (res) => {
             cb(res);
         });
     },
