@@ -1,0 +1,40 @@
+<h1>Burger - Overcooked!</h1>
+
+<h2>Burgers that I haven't eaten</h2>
+
+<table>
+    <tr>
+        <th>Burger</th>
+        <th></th>
+        <th></th>
+    </tr>
+        {{#each burgers}}
+        {{#unless this.devoured}}
+    <tr>
+        <td>{{this.burger_name}}</td>
+        <td><button class="eat-btn" data-id=this.id>Eat</button></td>
+        <td><button class="delete-btn" data-id=this.id>Delete</button></td>
+    </tr>
+        {{/unless}}
+        {{/each}}
+</table>
+
+<hr>
+<h2>Burgers that I have eaten</h2>
+
+<table>
+    <tr>
+        <th>Burger</th>
+        <th></th>
+        <th></th>
+    </tr>
+        {{#each burgers}}
+        {{#if this.devoured}}
+    <tr>
+        <td>{{this.burger_name}}</td>
+        <td><button class="eat-btn" data-id=this.id>Eat</button></td>
+        <td><button class="delete-btn" data-id=this.id>Delete</button></td>
+    </tr>
+        {{/if}}
+        {{/each}}
+</table>

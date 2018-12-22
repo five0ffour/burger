@@ -14,8 +14,8 @@ router.get("/", function (req, res) {
         };
         console.log("--------- GET ----------");
         console.log(burgersData);
-        // res.render("index", burgersData);
-        res.json(burgersData);
+        res.render("index", burgersData);
+        // res.json(burgersData);
     });
 });
 
