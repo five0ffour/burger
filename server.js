@@ -1,35 +1,30 @@
-var connection = require("./config/connection.js");
-var orm = require("./config/orm.js");
+var express = require("express");
 
-var table = "burgers";
+var PORT = process.env.PORT || 8080;
 
-orm.all(table, (data) => {
-    console.log("--------------------GET Burgers--------------------");
-    console.log(data);
+var app = express();
+
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
+
+// Parse application body
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Set Handlebars
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+// Import routes and give the server access to them.
+var routes = require("./controllers/burgersController.js");
+
+app.use(routes);
+
+// Start our server so that it can begin listening to client requests.
+app.listen(PORT, function() {
+  // Log (server-side) when our server has started
+  console.log("Server listening on: http://localhost:" + PORT);
 });
-
-var columns = [ "burger_name", "devoured"];
-var values = [ "Robin's Nest", true ];
-orm.insert(table, columns, values, (data) => {
-    console.log("--------------------INSERT Burger--------------------");
-    console.log("Model Insert - affected row count: ", data);
-});
-
-var objKeyPair = { "burger_name" : "Bacon Cheese Burger",
-                  "devoured" : false };
-var condition = "id = 13";
-orm.update(table, objKeyPair, condition, (data) => {
-    console.log("--------------------UPDATE Burger--------------------");
-    console.log("Model Update -  affected row count: ", data);
-});
-
-
-var condition = [{ "burger_name" : "Robin's Nest"}];
-orm.delete(table, condition, (data) => {
-    console.log("--------------------DELETE Burger--------------------");
-    console.log("Model Delete - affected row count: ", data);
-});
-
-
-
 
