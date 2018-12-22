@@ -11,6 +11,7 @@ var burger = {
 
     // var columns = [ "burger_name", "devoured"];
     // var values = [ "Robin's Nest", true ];
+
     insert: (columns, values, cb) => {
         orm.insert("burgers", columns, values, (res) => {
             cb(res);

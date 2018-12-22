@@ -45,6 +45,19 @@ router.delete("/api/burgers/:id", function (req, res) {
     });
 });
 
+router.post("/api/burgers/", function (req, res) {
+    console.log("POST Called ");
+
+    var columns = ["burger_name", "devoured"];
+    var values = [ req.body.burger_name, req.body.devoured ];
+    console.log("values = [" + values + "]");
+    burger.insert(columns, values, (burgersData) => {
+        console.log("--------- POST ----------");
+        res.json({ id: burgersData.insertId });
+    });
+});
+
+
 
 // Export routes for server.js to use.
 module.exports = router;

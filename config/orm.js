@@ -20,7 +20,7 @@ const orm = {
         console.log(queryStr);
         connection.query(queryStr, values, function(err,result) {
             if (err) throw err; 
-            cb(result.affectedRows);
+            cb(result);
         });
     },
 
