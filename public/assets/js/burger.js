@@ -39,6 +39,32 @@ $(function () {
         );
     });
 
+    $("#add-btn").on("click", function (event) {
+
+        event.preventDefault();
+
+        // Validation
+        var burgerName =  $('input[name=burger-name]').val();
+        var eaten = $("input:radio[name='eaten']:checked").attr("data-value");
+        
+        var burger = {
+            burger_name: burgerName,
+            devoured: eaten
+        }
+
+        console.log("Add event for burger name: ", burger.burger_name + "\nEaten: " +  burger.devoured);
+
+        // Send the POST request.
+        $.ajax("/api/burgers/", {
+            type: "POST",
+            data: burger
+        }).then(
+            function () {
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
 
 
 });

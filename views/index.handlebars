@@ -36,3 +36,12 @@
         {{/if}}
         {{/each}}
 </table>
+<hr>
+<form>
+    <p>What is the burger name?</p>
+    <input type="text" name="burger-name" placeholder="Bacon Double Cheeseburger" size="50">
+    <p>Have you eaten it already?</p>
+    <input type="radio" name="eaten" data-value="1">Eaten<br>
+    <input type="radio" name="eaten" data-value="0" checked>Not Eaten<br>
+    <input id="add-btn" type="submit" value="Add Burger">
+</form>
