@@ -45,11 +45,9 @@ $(function () {
 
         // Validation
         var burgerName =  $('input[name=burger-name]').val();
-        var eaten = $("input:radio[name='eaten']:checked").attr("data-value");
         
         var burger = {
             burger_name: burgerName,
-            devoured: eaten
         }
 
         console.log("Add event for burger name: ", burger.burger_name + "\nEaten: " +  burger.devoured);

@@ -1,47 +1,83 @@
-<h1>Burger - Overcooked!</h1>
+<div class="section" id="burger-menu">
+    <div class="container">
+        <div class="row">
+            <h3 class="header text_b center">"Eat Da Burger" Menu </h3>
+        </div>
+        <div class="row">
 
-<h2>Burgers that I haven't eaten</h2>
+            <!-- ROW 1 / COL 1 - Ordered Burger List -->
+            <div class="col s12 m12 l4">
+                <div class="card">
+                    <h4 class="header text_b center">Burgers I haven't eaten</h4>
+                    <table>
+                        <tr>
+                            <th>Burger Type</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        {{#each burgers}}
+                        {{#unless this.devoured}}
+                        <tr>
+                            <td>{{this.burger_name}}</td>
+                            <td><button class="eat-btn" data-id={{this.id}}>Eat</button></td>
+                            <td><button class="delete-btn" data-id={{this.id}}>Delete</button></td>
+                        </tr>
+                        {{/unless}}
+                        {{/each}}
+                    </table>
+                </div>
+            </div>
 
-<table>
-    <tr>
-        <th>Burger Type</th>
-        <th></th>
-        <th></th>
-    </tr>
-        {{#each burgers}}
-        {{#unless this.devoured}}
-    <tr>
-        <td>{{this.burger_name}}</td>
-        <td><button class="eat-btn" data-id={{this.id}}>Eat</button></td>
-        <td><button class="delete-btn" data-id={{this.id}}>Delete</button></td>
-    </tr>
-        {{/unless}}
-        {{/each}}
-</table>
+            <!-- ROW 1 / COL 2 - Graphic Spacer Image -->
+            <div class="col s12 m12 l4">
+                <div class="card">
+                    <!-- Intentionally Blank -->
+                    <!-- TODO:  Add image here -->
+                </div>
+            </div>
 
-<hr>
-<h2>Burgers that I have eaten</h2>
+            <!-- ROW 1 / COL 3 - Eaten Burger List -->
+            <div class="col s12 m12 l4">
+                <div class="card">
+                    <h4 class="header text_b center">Burgers I have eaten</h4>
+                    <table>
+                        <tr>
+                            <th>Burger Type</th>
+                            <th></th>
+                        </tr>
+                        {{#each burgers}}
+                        {{#if this.devoured}}
+                        <tr>
+                            <td>{{this.burger_name}}</td>
+                            <td><button class="delete-btn" data-id={{this.id}}>Delete</button></td>
+                        </tr>
+                        {{/if}}
+                        {{/each}}
+                    </table>
+                </div>
+            </div>
+        </div>
 
-<table>
-    <tr>
-        <th>Burger Type</th>
-        <th></th>
-    </tr>
-        {{#each burgers}}
-        {{#if this.devoured}}
-    <tr>
-        <td>{{this.burger_name}}</td>
-        <td><button class="delete-btn" data-id={{this.id}}>Delete</button></td>
-    </tr>
-        {{/if}}
-        {{/each}}
-</table>
-<hr>
-<form>
-    <p>What is the burger name?</p>
-    <input type="text" name="burger-name" placeholder="Bacon Double Cheeseburger" size="50">
-    <p>Have you eaten it already?</p>
-    <input type="radio" name="eaten" data-value="1">Eaten<br>
-    <input type="radio" name="eaten" data-value="0" checked>Not Eaten<br>
-    <input id="add-btn" type="submit" value="Add Burger">
-</form>
+        <div class="row">
+
+            <!-- ROW 2 / COL 1 - Blank Spacer -->
+            <div class="col s12 m12 l4 text-centered">
+                <!-- intentionally left black -->
+            </div>
+
+            <!-- ROW 2 / COL 2 - Order Burger Menu -->
+            <div class="col s12 m12 l4 text-centered">
+                <form>
+                    <p>What is the name of the burger you'd like?</p>
+                    <input type="text" name="burger-name" placeholder="Double Cheeseburger" size="50">
+                    <input id="add-btn" type="submit" value="Order Burger">
+                </form>
+            </div>
+
+            <!-- ROW 2 / COL 3 - Blank Spacer -->
+            <div class="col s12 m12 l4 text-centered">
+                <!-- intentionally left black -->
+            </div>
+        </div>
+    </div>
+</div>
