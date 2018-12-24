@@ -19,8 +19,8 @@
                         {{#unless this.devoured}}
                         <tr>
                             <td>{{this.burger_name}}</td>
-                            <td><button class="eat-btn" data-id={{this.id}}>Eat</button></td>
-                            <td><button class="delete-btn" data-id={{this.id}}>Reject</button></td>
+                            <td><button class="eat-btn" data-id={{this.id}}><i class="fas fa-utensils"></i> Eat</button></td>
+                            <td><button class="delete-btn" data-id={{this.id}}><i class="fas fa-trash-alt"></i> Reject</button></td>
                         </tr>
                         {{/unless}}
                         {{/each}}
@@ -49,7 +49,7 @@
                         {{#if this.devoured}}
                         <tr>
                             <td>{{this.burger_name}}</td>
-                            <td><button class="delete-btn" data-id={{this.id}}>Delete</button></td>
+                            <td><button class="delete-btn" data-id={{this.id}}><i class="fas fa-trash-alt"></i> Delete</button></td>
                         </tr>
                         {{/if}}
                         {{/each}}
