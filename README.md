@@ -21,11 +21,21 @@ For those to young to remember,  J. Wellington Wimpy was the character from the 
 The gif provides a quick overview of the functionality (input validation checks not shown):    
   
 ![Wimpy's Diner](./public/assets/images/burger-demo.gif)  
-    
+
+## API Endpoints
+  
+|HTTP Action | Endpoint |  Parms | Input | Output | Description |
+| ---------- | -------- | ------ | ----- | ------ | ----------- |
+| GET        | / | None         | n/a | JSON burgers[] | Default route to the home page to display all burgers |
+| POST       | /api/burgers     | n/a | JSON burger | index.html | adds the passed burger object to the database   |
+| UPDATE     | /api/burgers/:id | id | n/a |index.html | updates the devoured state of the specified burger in the database based on id|
+| DELETE     | /api/burgers/:id | id | n/a | number deleted |  deletes the specified burger from the database based on id |
+     
 ## Developer notes  
 - **.env:**  environment variables used by dotenv package holding secret keys and passwords for mySQL, not included in GIT    
 - **.gitignore.** - ubiquitous git file to keep node modules and passwords out of GIT  
 - **server.js** - the main entry point of on the server side, sets up the web server and endpoints  
+- **controllers/burgerControllers.js** - registers HTTP endpoints with the express router (POST, GET, UPDATE, DELETE) 
 - **config/connection.js** - the database configuration file, allows for local or heroku deployments  
 - **config/orm.js** - our homegrown object relational database mapper (the SQL queries)  
 - **db/schema.sql** - the database configuration script to (re)create a fresh database  

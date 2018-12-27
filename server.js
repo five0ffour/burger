@@ -1,3 +1,5 @@
+// server.js - entry point for express web server, creates router endpoints
+
 var express = require("express");
 
 var PORT = process.env.PORT || 8080;

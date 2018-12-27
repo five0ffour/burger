@@ -1,5 +1,11 @@
-var express = require("express");
+// burgerController.js - registers the HTTP endpoints with the express router:
+//     /                   - GET - return all burgers from the database
+//     /api/burgers/:id    - PUT - update a specfic burger in the database
+//     /api/burgers/:id    - DELETE - removes a specific burger from the database
+//     /api/burgers        - POST - add a burger to the dataase
+//   (See README.md for parameter details)
 
+var express = require("express");
 var router = express.Router();
 
 // Import the model (burger.js) to use its database functions.

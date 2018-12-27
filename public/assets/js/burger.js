@@ -1,6 +1,9 @@
+// public/js/burger.js - front click event handling logic for User Inteface 
+
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
 
+    // Eat - move item to the devoured table
     $(".eat-btn").on("click", function (event) {
         var burger = {
             id : $(this).data("id")
@@ -20,6 +23,7 @@ $(function () {
         );
     });
 
+    // Delete - remove item from database
     $(".delete-btn").on("click", function (event) {
         var burger = {
             id : $(this).data("id")
@@ -39,12 +43,13 @@ $(function () {
         );
     });
 
+    // Add - form entry POST event to add item to database
     $("#add-btn").on("click", function (event) {
 
         event.preventDefault();
 
         // Validation
-        var burgerName =  $('input[name=burger-name]').val();
+        var burgerName =  $('input[name=burger-name]').val().trim();
         
         var burger = {
             burger_name: burgerName,
@@ -63,6 +68,5 @@ $(function () {
             }
         );
     });
-
 
 });
