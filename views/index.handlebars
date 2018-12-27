@@ -11,7 +11,7 @@
             <div class="col s12 m12 l12">
                 <div class="card horizontal z-depth-2">
                     <div class="card-image">
-                        <img src="assets/images/Wimpys.png">
+                        <img class="responsive-img" src="assets/images/Wimpys.png">
                     </div>
                     <div class="card-content valign-wrapper center-align">
                         <form class="burgerform">
@@ -41,9 +41,8 @@
                                 <p>{{this.burger_name}}</p>
                             </td>
                             <td><button class="eat-btn btn waves-effect waves-light" data-id={{this.id}}><i class="fas fa-utensils"></i>
-                                    Devour It!</button></td>
-                            <td><button class="delete-btn btn waves-effect waves-light" data-id={{this.id}}><i class="fas fa-trash-alt"></i>
-                                    Reject</button></td>
+                                    Eat!</button></td>
+                            <td><button class="delete-btn btn waves-effect waves-light" data-id={{this.id}}><i class="fas fa-trash-alt"></i></button></td>
                         </tr>
                         {{/unless}}
                         {{/each}}
@@ -65,8 +64,7 @@
                             <td>
                                 <p>{{this.burger_name}}</p>
                             </td>
-                            <td><button class="delete-btn btn waves-effect waves-light" data-id={{this.id}}><i class="fas fa-trash-alt"></i>
-                                    Delete</button></td>
+                            <td><button class="delete-btn btn waves-effect waves-light" data-id={{this.id}}><i class="fas fa-trash-alt"></i></button></td>
                         </tr>
                         {{/if}}
                         {{/each}}
