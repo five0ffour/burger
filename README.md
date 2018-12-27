@@ -7,7 +7,7 @@ try it at:  https://mbg-burger.herokuapp.com
 J. Welligton Wimpy's burger app is a simple database app to demostrate full stack capabilities, remote deployment and persistant storage over time. The application features a burger ordering theme. Enter a burger you'd like to eat and it adds it to the "Burger's you've ordered" list. Once there, you can eat it and have it moved to the eaten burger list. Once eaten a burger can't be recovered (of course). It features trashcan buttons to delete any burger from either list (and from the database).  
   
 ### Who is J. Wellington Wimpy?  
-For those to young to remember,  J. Wellington Wimpy was the character from the depression era Popeye cartoons that was always mooching hamburgers and promising to pay later. This diner app is an homage to that congenial fellow.  
+For those to young to remember,  J. Wellington Wimpy was the character from the depression era Popeye cartoons that was always mooching hamburgers and promising to pay later. This diner app is a homage to that congenial fellow.  
   
 ## Wimpy's Diner App capabilties  
   1) __Order a Burger__ - calls a POST method to add a burger to the MySQL database and mark it as uneaten  
