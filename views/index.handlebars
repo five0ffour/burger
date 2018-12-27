@@ -1,26 +1,50 @@
 <div class="section" id="burger-menu">
     <div class="container">
         <div class="row">
-            <h3 class="header text_b center">"Eat Da Burger" Menu </h3>
+            <!-- ROW 1 / COL 1 - Order Burger Menu -->
+            <div class="col s6 m6 l5 text-center">
+                <img src="assets/images/wimpys.png" class="circle responsive-img" alt="Wimpys store">
+            </div>
+
+                <!-- ROW 1 / COL 2 - Order Burger Menu -->
+            <div class="col s6 m6 l7  text-center">
+                <h4>Order a hamburger today and don't pay until Tuesday! &trade;</h4>
+                <br>
+                <form class="burgerform">
+                    <h4>Name a burger you'd like to order:</h4>
+                    <input type="text" name="burger-name" placeholder="Double Cheeseburger" size="50">
+                    <input id="add-btn" type="submit" value="Order Burger">
+                </form>
+            </div>
         </div>
+
+        <div class="row">
+            <!-- ROW 2 / COL 1 - Blank Spacer -->
+            <div class="col s12 m12 112 text-centered">
+                <!-- Intentionally left blank -->
+            </div>
+        </div>
+
         <div class="row">
 
-            <!-- ROW 1 / COL 1 - Ordered Burger List -->
-            <div class="col s12 m12 l4">
-                <div class="card">
-                    <h4 class="header text_b center">Burgers I haven't eaten</h4>
+            <!-- ROW 3 / COL 1 - Ordered Burger List -->
+            <div class="col s12 m12 l5">
+                <div class="card burgerlist">
+                    <h4 class="header text_b center">Burgers you've ordered</h4>
                     <table>
                         <tr>
-                            <th>Burger Type</th>
+                            <th></th>
                             <th></th>
                             <th></th>
                         </tr>
                         {{#each burgers}}
                         {{#unless this.devoured}}
                         <tr>
-                            <td>{{this.burger_name}}</td>
-                            <td><button class="eat-btn" data-id={{this.id}}><i class="fas fa-utensils"></i> Eat</button></td>
-                            <td><button class="delete-btn" data-id={{this.id}}><i class="fas fa-trash-alt"></i> Reject</button></td>
+                            <td><h5>{{this.burger_name}}</h5></td>
+                            <td><button class="eat-btn" data-id={{this.id}}><i class="fas fa-utensils"></i> Devour
+                                    It!</button></td>
+                            <td><button class="delete-btn" data-id={{this.id}}><i class="fas fa-trash-alt"></i>
+                                    Reject</button></td>
                         </tr>
                         {{/unless}}
                         {{/each}}
@@ -28,55 +52,26 @@
                 </div>
             </div>
 
-            <!-- ROW 1 / COL 2 - Graphic Spacer Image -->
-            <div class="col s12 m12 l4">
-                <div class="card">
-                    <!-- Intentionally Blank -->
-                    <!-- TODO:  Add image here -->
-                </div>
-            </div>
-
-            <!-- ROW 1 / COL 3 - Eaten Burger List -->
-            <div class="col s12 m12 l4">
-                <div class="card">
-                    <h4 class="header text_b center">Burgers I have eaten</h4>
+            <!-- ROW 3 / COL 2 - Eaten Burger List -->
+            <div class="col s12 m12 l7">
+                <div class="card burgerlist">
+                    <h4 class="header text_b center">Burgers you've eaten</h4>
                     <table>
                         <tr>
-                            <th>Burger Type</th>
+                            <th></th>
                             <th></th>
                         </tr>
                         {{#each burgers}}
                         {{#if this.devoured}}
                         <tr>
-                            <td>{{this.burger_name}}</td>
-                            <td><button class="delete-btn" data-id={{this.id}}><i class="fas fa-trash-alt"></i> Delete</button></td>
+                            <td><h5>{{this.burger_name}}</h5></td>
+                            <td><button class="delete-btn" data-id={{this.id}}><i class="fas fa-trash-alt"></i>
+                                    Delete</button></td>
                         </tr>
                         {{/if}}
                         {{/each}}
                     </table>
                 </div>
-            </div>
-        </div>
-
-        <div class="row">
-
-            <!-- ROW 2 / COL 1 - Blank Spacer -->
-            <div class="col s12 m12 l4 text-centered">
-                <!-- intentionally left black -->
-            </div>
-
-            <!-- ROW 2 / COL 2 - Order Burger Menu -->
-            <div class="col s12 m12 l4 text-centered">
-                <form>
-                    <p>What is the name of the burger you'd like?</p>
-                    <input type="text" name="burger-name" placeholder="Double Cheeseburger" size="50">
-                    <input id="add-btn" type="submit" value="Order Burger">
-                </form>
-            </div>
-
-            <!-- ROW 2 / COL 3 - Blank Spacer -->
-            <div class="col s12 m12 l4 text-centered">
-                <!-- intentionally left black -->
             </div>
         </div>
     </div>

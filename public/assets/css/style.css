@@ -1,0 +1,12 @@
+body {
+  background-color: #ffe082  ;
+  color: blue;
+}
+
+.burgerlist,
+.burgerform {
+  background-color: white    ;
+  color: black;
+  padding: 12px !important;
+}
+

@@ -1,8 +1,4 @@
--- use for local deployment
--- USE burgers_db;
-
--- use for heroku deployment
-use ici55aem3zzw9fxd;
+USE burgers_db;
 
 INSERT INTO burgers (burger_name, devoured) VALUES
 ("White Castle Slider", false),
@@ -16,7 +12,8 @@ INSERT INTO burgers (burger_name, devoured) VALUES
 ("Slug (Cornmeal Burger)", false),
 ("West Coast Griddle Style", false),
 ("Smash Burger", false),
-("Shady Glen (!) - Manchester, NH", true);
+("Shady Glen (!) - Manchester, CT", true);
 
 
+UPDATE burgers SET burger_name='Bacon Cheese Burger',devoured=false WHERE id = 13;
 SELECT * from burgers;
