@@ -1,27 +1,26 @@
 <div class="section" id="burger-menu">
     <div class="container">
         <div class="row">
-            <!-- ROW 1 / COL 1 - Order Burger Menu -->
-            <div class="col s12 m12 l5 text-center">
-                <img src="assets/images/Wimpys.png" class="circle responsive-img" alt="Wimpys store">
-            </div>
-
-                <!-- ROW 1 / COL 2 - Order Burger Menu -->
-            <div class="col s12 m12 l7  text-center">
-                <h4>Order a hamburger today and don't pay until Tuesday! &trade;</h4>
-                <br>
-                <form class="burgerform">
-                    <h4>Name a burger you'd like to order:</h4>
-                    <input type="text" name="burger-name" placeholder="Double Cheeseburger" size="50">
-                    <input id="add-btn" type="submit" value="Order Burger">
-                </form>
+            <div class="col s12 m12 l12 center-align">
+                <h2 class="header">-- J. Wellington Wimpy's Diner --</h2>
+                <h5>"Get a hamburger today and don't pay until Tuesday!"</h5>
             </div>
         </div>
 
         <div class="row">
-            <!-- ROW 2 / COL 1 - Blank Spacer -->
-            <div class="col s12 m12 112 text-centered">
-                <!-- Intentionally left blank -->
+            <div class="col s12 m12 l12">
+                <div class="card horizontal z-depth-2">
+                    <div class="card-image">
+                        <img src="assets/images/Wimpys.png">
+                    </div>
+                    <div class="card-content valign-wrapper center-align">
+                        <form class="burgerform">
+                            <h5>Name a burger we can get for you:</h5>
+                            <input type="text" name="burger-name" placeholder="Double Cheeseburger" size="50">
+                            <input id="add-btn" type="submit" class="btn waves-effect waves-light" value="Order Burger">
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -29,21 +28,21 @@
 
             <!-- ROW 3 / COL 1 - Ordered Burger List -->
             <div class="col s12 m12 l6">
-                <div class="card burgerlist">
-                    <h4 class="header text_b center">Burgers you've ordered</h4>
-                    <table>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
+                <div class="card burgerlist z-depth-2">
+                    <div class="card-image">
+                    <img src="assets/images/burger.jpg">
+                    </div>
+                    <h4 class="header text_b center-align">Burgers you've ordered</h4>
+                    <table class="striped">
                         {{#each burgers}}
                         {{#unless this.devoured}}
                         <tr>
-                            <td><h5>{{this.burger_name}}</h5></td>
-                            <td><button class="eat-btn" data-id={{this.id}}><i class="fas fa-utensils"></i> Devour
-                                    It!</button></td>
-                            <td><button class="delete-btn" data-id={{this.id}}><i class="fas fa-trash-alt"></i>
+                            <td>
+                                <p>{{this.burger_name}}</p>
+                            </td>
+                            <td><button class="eat-btn btn waves-effect waves-light" data-id={{this.id}}><i class="fas fa-utensils"></i>
+                                    Devour It!</button></td>
+                            <td><button class="delete-btn btn waves-effect waves-light" data-id={{this.id}}><i class="fas fa-trash-alt"></i>
                                     Reject</button></td>
                         </tr>
                         {{/unless}}
@@ -54,18 +53,19 @@
 
             <!-- ROW 3 / COL 2 - Eaten Burger List -->
             <div class="col s12 m12 l6">
-                <div class="card burgerlist">
-                    <h4 class="header text_b center">Burgers you've eaten</h4>
-                    <table>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                        </tr>
+                <div class="card burgerlist z-depth-2">
+                    <div class="card-image">
+                    <img src="assets/images/meal-finished.jpg">
+                    </div>
+                    <h4 class="header text_b center-align">Burgers you've eaten</h4>
+                    <table class="striped">
                         {{#each burgers}}
                         {{#if this.devoured}}
                         <tr>
-                            <td><h5>{{this.burger_name}}</h5></td>
-                            <td><button class="delete-btn" data-id={{this.id}}><i class="fas fa-trash-alt"></i>
+                            <td>
+                                <p>{{this.burger_name}}</p>
+                            </td>
+                            <td><button class="delete-btn btn waves-effect waves-light" data-id={{this.id}}><i class="fas fa-trash-alt"></i>
                                     Delete</button></td>
                         </tr>
                         {{/if}}

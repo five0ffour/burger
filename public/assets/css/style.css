@@ -1,5 +1,9 @@
+/* Fonts */
+@font-face { font-family: 'Cherry Soda'; src: url('../fonts/CherrySoda.ttf'); } 
+
 body {
-  background-color: #ffe082  ;
+  background-color: #ffe082;
+  background-image: url('../images/ricepaper_v3.png');
   color: blue;
 }
 
@@ -10,3 +14,11 @@ body {
   padding: 12px !important;
 }
 
+h1, h2, h3, h4, h5, p {
+  font-family: 'Cherry Soda', sans-serif; 
+  color : darkblue;
+}
+
+td {
+  font-family: 'Cherry Soda', sans-serif; 
+}
