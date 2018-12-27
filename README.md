@@ -82,3 +82,4 @@ Heroku - an Amazon hosted cloud deployment framework
 subtlepatterns.com - background textured wallpaper  
 Burger King - Mall of America BK's tasteful burger image  
 Cherry Soda Font - FontDiner.com  
+Font Aweseome - for the trashcan & dinner fork icons  
